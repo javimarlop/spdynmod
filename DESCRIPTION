@@ -1,8 +1,12 @@
 Package: spdynmod
-Title: 
-Description: 
+Type: Package
+Title: Spatio dynamic modelling tools
+Description: Spatio dynamic modelling tools
 Version: 0.1
-Authors@R: # getOptions('devtools.desc.author')
-Depends: R (>= 3.0.2)
-License: # getOptions('devtools.desc.license')
+Date: 2013/11/25
+Authors: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>, Babak Naimi <naimi.b@gmail.com>, Julia Martinez-Fernandez <juliamf@um.es> # getOptions('devtools.desc.author')
+Maintainer: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>
+Depends: knitr
+Imports: deSolve, raster, animation, rgdal
+License: GPL (>= 2) # getOptions('devtools.desc.license')
 LazyData: true
