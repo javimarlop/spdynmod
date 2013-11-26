@@ -1,8 +1,2 @@
-import(raster)
-import(rgdal)
-import(deSolve)
-
-export(
-  spdynmod,
-  neigh_cells
-)	
+export(neigh_cell)
+export(spdynmod)

@@ -26,9 +26,9 @@ spdynmod<-function(t,init,parameters,nr,nc) {
 	es <- matrix(nr=nr,nc=nc,init[(NN+1):(2*NN)])
 	rb <- matrix(nr=nr,nc=nc,init[((2*NN)+1):(3*NN)])
 	baresoil <- matrix(nr=nr,nc=nc,init[((3*NN)+1):(4*NN)])
-	drambla1<-as.matrix(dr1) 
-	drambla2<-as.matrix(dr2) 
-	fa_avd2<-as.matrix(fa_avd)
+	drambla1<-raster::as.matrix(dr1) 
+	drambla2<-raster::as.matrix(dr2) 
+	fa_avd2<-raster::as.matrix(fa_avd)
 
 	Time <<- t
 	tprb <- parameters['tprb']
@@ -68,7 +68,7 @@ spdynmod<-function(t,init,parameters,nr,nc) {
 	 dbaresoil =  - bs2sm  - bs2rb 
 
 ######### BEGIN DISPERSAL
-sm_disp<-0
+#sm_disp<-0
 		w22<-which(sm > 1)
 
 		if (length(w22)>0) {
@@ -81,7 +81,7 @@ sm_disp<-0
 				if (length(ind)>0) {
 						dbaresoil[xs]<-dbaresoil[xs]-0.25
 						dsm[xs]<-dsm[xs]+0.25
-						sm_disp<-3
+						#sm_disp<-3
 
 
 				} 
@@ -93,7 +93,7 @@ sm_disp<-0
 				if (length(ind)>0) {
 						des[xs]<-des[xs]-0.25
 						dsm[xs]<-dsm[xs]+0.25
-						sm_disp<-4
+						#sm_disp<-4
 
 	} 
 }
@@ -107,43 +107,44 @@ sm_disp<-0
 require(raster)
 
 rpath = system.file("extdata",package="spdynmod")
+#rpath = '/net/netapp2/H05_Homes/majavie/spdynmod/inst/extdata'
 
-r<<- raster('mc84_1_reclass.asc')
+r<- raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
 
-fak<<- raster('log_cr10_acum_rm_t1_aver.asc')
+fak<<- raster(paste(rpath,'/log_cr10_acum_rm_t1_aver.asc',sep=''))
 
-dr1<<- raster('rambla11_cr10_dist_t1.asc') 
-dr2<<- raster('rambla22_cr10_dist_t1.asc') 
+dr1<<- raster(paste(rpath,'/rambla11_cr10_dist_t1.asc',sep='')) 
+dr2<<- raster(paste(rpath,'/rambla22_cr10_dist_t1.asc',sep='')) 
 
-avd<<- raster('ramblas_cr10_dist_t1_ave.asc')
+avd<<- raster(paste(rpath,'/ramblas_cr10_dist_t1_ave.asc',sep=''))
 
 fa_avd<<-fak+(1-avd)
 
-es_init<<-raster('mc84_1_reclass3.asc')
+es_init<<-raster(paste(rpath,'/mc84_1_reclass3.asc',sep=''))
 
-sm_init<<-raster('mc84_2_reclass3.asc')
+sm_init<<-raster(paste(rpath,'/mc84_2_reclass3.asc',sep=''))
 
-rb_init<<-raster('mc84_34.asc')
+rb_init<<-raster(paste(rpath,'/mc84_34.asc',sep=''))
 
-baresoil_init<<-raster('mc84_4_reclass3.asc')
+baresoil_init<<-raster(paste(rpath,'/mc84_4_reclass3.asc',sep=''))
 
 nr<<-dim(r)[1]
 nc<<-dim(r)[2]
 NN<<-nr*nc
 
 ### state variables ###
-st <<- c(as.vector(as.matrix(sm_init)), as.vector(as.matrix(es_init)),as.vector(as.matrix(rb_init)),as.vector(as.matrix(baresoil_init)))
+st <<- c(raster::as.vector(raster::as.matrix(sm_init)), raster::as.vector(raster::as.matrix(es_init)),raster::as.vector(raster::as.matrix(rb_init)),raster::as.vector(raster::as.matrix(baresoil_init)))
 
 ### parameters ###
 parms <<- c(tprb = 0.005, tpsm = 0.2)# tpsm = 0.01
 
 ### model specs and execution ###
-source('mc_dynmodv2_7_functions.R')
+##source('mc_dynmodv2_7_functions.R')
 DT <<- 0.25
 time <- seq(0.001,24,DT)
-out <<- ode.2D(func=model,y=st,times=time,parms=parms,method='euler',nspec = 4, dimens = c(nr, nc),nr=nr,nc=nc,names=c('Salt marsh','Salt steppe','Reed beds','Bare soil'))
+out <<- deSolve::ode.2D(func=spdynmod,y=st,times=time,parms=parms,method='euler',nspec = 4, dimens = c(nr, nc),nr=nr,nc=nc,names=c('Salt marsh','Salt steppe','Reed beds','Bare soil'))
 #
 
 
 
-system('aplay -t wav hangout_dingtone.wav')
+#system('aplay -t wav hangout_dingtone.wav')

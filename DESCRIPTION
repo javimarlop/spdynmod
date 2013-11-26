@@ -4,9 +4,19 @@ Title: Spatio dynamic modelling tools
 Description: Spatio dynamic modelling tools
 Version: 0.1
 Date: 2013/11/25
-Authors: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>, Babak Naimi <naimi.b@gmail.com>, Julia Martinez-Fernandez <juliamf@um.es> # getOptions('devtools.desc.author')
+Authors: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>, Babak Naimi
+    <naimi.b@gmail.com>, Julia Martinez-Fernandez <juliamf@um.es>
 Maintainer: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>
-Depends: knitr
-Imports: deSolve, raster, animation, rgdal
-License: GPL (>= 2) # getOptions('devtools.desc.license')
+Depends:
+    knitr,
+    deSolve,
+    raster,
+    animation,
+    rgdal
+License: GPL (>= 2)
 LazyData: true
+Collate:
+    'mc_dynmodv2_7_functions.R'
+    'neigh_cell.R'
+    'spdynmod-package.r'
+    'spdynmod.R'
