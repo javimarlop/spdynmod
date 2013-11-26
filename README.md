@@ -1,7 +1,7 @@
 spdynmod
 ========
 
-Spatio-dynamic wetland plant communities model: R source code and data.
+R library and data: Spatio-dynamic wetland plant communities model
 
 **Citation:**
 
@@ -9,15 +9,10 @@ Spatio-dynamic wetland plant communities model: R source code and data.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
 
-# Instructions: How to install the spdynmod R library
+How to install the spdynmod R library
 
 ```
 library(devtools)
-
+install_github()
 ```
 
-
-# Old instructions
-
-* For executing the model open R and run `source('mc_dynmodv2_9_spat.R',echo=T)`.
-* You can then run the animation script `source('animation.R')` to create a gif animation of the model results.
