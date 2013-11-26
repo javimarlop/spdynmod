@@ -20,3 +20,4 @@ Collate:
     'neigh_cell.R'
     'spdynmod-package.r'
     'spdynmod.R'
+    'run_model.R'
