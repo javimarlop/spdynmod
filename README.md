@@ -24,7 +24,7 @@ run_model()
 animate_model()
 ```
 
-## How to cite this package/model
+## How to cite this model library
 
 ```
 citation('spdynmod')
