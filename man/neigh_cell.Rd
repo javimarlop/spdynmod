@@ -1,6 +1,6 @@
 \name{neigh_cell}
 \alias{neigh_cell}
-\title{A one sentence description of what your function does}
+\title{A function to identify neighboring cells.}
 \usage{
   neigh_cell(cell)
 }

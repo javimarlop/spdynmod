@@ -1,7 +1,7 @@
 Package: spdynmod
 Type: Package
-Title: Spatio dynamic modelling tools
-Description: Spatio dynamic modelling tools
+Title: Spatio dynamic wetland model
+Description: Spatio dynamic wetland model
 Version: 0.1
 Date: 2013/11/25
 Authors: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>, Babak Naimi
@@ -21,3 +21,4 @@ Collate:
     'spdynmod-package.r'
     'spdynmod.R'
     'run_model.R'
+    'animate_model.R'

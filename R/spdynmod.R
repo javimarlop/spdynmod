@@ -1,4 +1,4 @@
-#' A one sentence description of what your function does
+#' Wetland model.
 #' 
 #' A more detailed description of what the function is and how
 #' it works. It may be a paragraph that should not be separated

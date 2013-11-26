@@ -1,6 +1,6 @@
 \name{run_model}
 \alias{run_model}
-\title{A one sentence description of what your function does}
+\title{Run the model.}
 \usage{
   run_model()
 }
