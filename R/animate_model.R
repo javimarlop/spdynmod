@@ -1,11 +1,11 @@
 #' Make an animation of the model output.
 #' 
-#' It requires ImageMagic installed in the system to work.
+#' It requires ImageMagick installed in the system to work.
 #'
 #' @param inputParameter1 A description of the input parameter \code{inputParameter1}
 #' @param inputParameter2 A description of the input parameter \code{inputParameter2}
 #'
-#' @return output A description of the object the function outputs 
+#' @return a GIF animated file
 #'
 #' @keywords animation
 #'
@@ -37,3 +37,26 @@ for (i in seq(1, dim(out)[1], by = 1)){
  }},movie.name='movie.gif')
 
 }
+
+### PLOT GOOGLEVIS CHART
+
+## Data preparation
+#out2<-as.data.frame(out)
+#b<-1:96
+#DatosApilados <- stack(out2[, c('Salt marsh','Salt steppe','Reed beds','Bare soil')])
+#tiempo<-rep(b,4)
+#DatosApilados2<-DatosApilados
+#DatosApilados2[,1]<-DatosApilados$ind
+#DatosApilados2[,2]<-tiempo
+#DatosApilados2[,3]<-DatosApilados$values
+#names(DatosApilados2) <- c("factor", "tiempo","valor")
+
+## Plot
+#require(googleVis)
+#Motion=gvisMotionChart(DatosApilados2, idvar="factor", timevar="tiempo", options=list(height=350, width=400))
+## Display chart
+#plot(Motion) 
+## Create Google Gadget
+##cat(createGoogleGadget(Motion), file="motionchart.xml")
+
+###

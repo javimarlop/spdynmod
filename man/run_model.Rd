@@ -2,22 +2,27 @@
 \alias{run_model}
 \title{Run the model.}
 \usage{
-  run_model()
+  run_model(pgr_rb = 0.005, pgr_sm = 0.2, method = "euler",
+    TS = 0.25)
 }
 \arguments{
-  \item{inputParameter1}{A description of the input
-  parameter \code{inputParameter1}}
+  \item{pgr_rb}{potential growth rate of reed beds}
 
-  \item{inputParameter2}{A description of the input
-  parameter \code{inputParameter2}}
+  \item{pgr_sm}{potential growth rate of salt marsh}
+
+  \item{method}{integration method: "lsodes", "euler",
+  "rk4", "ode23", "ode45", "adams", "iteration"}
+
+  \item{TS}{time step}
 }
 \value{
-  output A description of the object the function outputs
+  the function outputs a matrix named "out" which contains
+  the model simulated values for every pixel, time step and
+  state variable.
 }
 \description{
-  A more detailed description of what the function is and
-  how it works. It may be a paragraph that should not be
-  separated by any spaces.
+  Model solving function using ode.2D from the 'deSolve'
+  package.
 }
 \examples{
 R code here showing how your function works

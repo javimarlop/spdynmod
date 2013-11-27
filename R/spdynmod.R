@@ -74,7 +74,7 @@ spdynmod<-function(t,init,parameters,nr,nc) {
 		if (length(w22)>0) {
 			wg22<-sapply(w22,neigh_cell)
 
-				disp222bs<<-sapply(wg22,function(x) x[which(baresoil[x]>=1)]) 
+				disp222bs<-sapply(wg22,function(x) x[which(baresoil[x]>=1)]) 
 				which(disp222bs>0)->ind
 				as.numeric(disp222bs[ind])->xs
 
@@ -86,7 +86,7 @@ spdynmod<-function(t,init,parameters,nr,nc) {
 
 				} 
 
-				disp222ss<<-sapply(wg22,function(x) x[which(es[x]>=1)]) 
+				disp222ss<-sapply(wg22,function(x) x[which(es[x]>=1)]) 
 				which(disp222ss>0)->ind
 				as.numeric(disp222ss[ind])->xs
 

@@ -12,10 +12,10 @@
   parameter \code{inputParameter2}}
 }
 \value{
-  output A description of the object the function outputs
+  a GIF animated file
 }
 \description{
-  It requires ImageMagic installed in the system to work.
+  It requires ImageMagick installed in the system to work.
 }
 \examples{
 R code here showing how your function works
