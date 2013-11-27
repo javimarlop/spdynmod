@@ -18,11 +18,7 @@ install_github('spdynmod',username='javimarlop')
 run_model()
 ```
 
-## How to make an animation from the model results
-
-```
-animate_model()
-```
+Please, type `library(help=spdynmod)` to see available functions.
 
 ## How to cite this model library
 
