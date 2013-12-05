@@ -1,4 +1,4 @@
-#' Make an animation of the model output.
+#' Make an animation of the model output in relation to reed beds.
 #' 
 #' It requires ImageMagick installed in the system to work.
 #'

@@ -1,4 +1,4 @@
-#' Make an animation of the model output.
+#' Make an animation of the model output in relation to bare soil.
 #' 
 #' It requires ImageMagick installed in the system to work.
 #'

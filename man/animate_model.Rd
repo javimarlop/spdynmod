@@ -1,6 +1,6 @@
 \name{animate_model}
 \alias{animate_model}
-\title{Make an animation of the model output.}
+\title{Make an animation of the model output containing all state variables.}
 \usage{
   animate_model()
 }

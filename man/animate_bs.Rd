@@ -1,6 +1,6 @@
 \name{animate_bs}
 \alias{animate_bs}
-\title{Make an animation of the model output.}
+\title{Make an animation of the model output in relation to bare soil.}
 \usage{
   animate_bs()
 }

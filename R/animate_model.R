@@ -1,4 +1,4 @@
-#' Make an animation of the model output.
+#' Make an animation of the model output containing all state variables.
 #' 
 #' It requires ImageMagick installed in the system to work.
 #'

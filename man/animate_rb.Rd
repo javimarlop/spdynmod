@@ -1,6 +1,6 @@
 \name{animate_rb}
 \alias{animate_rb}
-\title{Make an animation of the model output.}
+\title{Make an animation of the model output in relation to reed beds.}
 \usage{
   animate_rb()
 }

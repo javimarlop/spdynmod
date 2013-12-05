@@ -1,6 +1,6 @@
 \name{animate_ss}
 \alias{animate_ss}
-\title{Make an animation of the model output.}
+\title{Make an animation of the model output in relation to the salt steppe community.}
 \usage{
   animate_ss()
 }

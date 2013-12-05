@@ -1,6 +1,6 @@
 \name{animate_sm}
 \alias{animate_sm}
-\title{Make an animation of the model output.}
+\title{Make an animation of the model output in relation to the salt marsh community.}
 \usage{
   animate_sm()
 }
