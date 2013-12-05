@@ -26,6 +26,12 @@ Please, type `library(help=spdynmod)` to see available functions.
 citation('spdynmod')
 ```
 
-## Slides about the model
+## Supplementary material
+
+### Online wetland and watershed maps
+
+You will see the location map of the study wetland and its waterhsed area by clicking on the `wetland.geojson` and `watershed.geojson` files on the `/inst/extdata` folder.
+
+### Slides about the model
 
 [Martínez-López J.](http://webs.um.es/javier.martinez/miwiki/lib/exe/fetch.php?id=inicio&cache=cache&media=isem2013_jml.pdf), Martínez-Fernández J. , Naimi B., Carreño M. F., Esteve M. A. 2013. Spatio-temporal dynamic modeling of plant communities responses to hydrological pressures in a semiarid Mediterranean wetland. Ecological Modelling for Ecosystem Sustainability in the context of Global Change - ISEM 2013. Toulouse, France.
