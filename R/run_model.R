@@ -19,9 +19,11 @@ run_model<-function(pgr_rb = 0.005, pgr_sm = 0.2, method = 'euler', TS = 0.25){
 
 ### initial random maps generation
 
+#r<-raster('mc84_1_reclass.asc')
+#r2<-raster('r2.asc')
 #rr <- r
 #rr[]<-abs(round(rnorm(13000,mean=2,sd=0.5)))
-#rr2<-mask(rr,r)
+#rr2<-rr-r2
 
 # sacar 0 y 1 como SS, 2 como SM, 3 como RB y 4 como BS
 # poner a todos 20 inicialmente o 0 segun presencia ausencia
