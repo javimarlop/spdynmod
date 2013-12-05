@@ -15,7 +15,7 @@ install_github('spdynmod',username='javimarlop')
 ## How to run the model
 
 ```
-run_model()
+run_model() # Please type 'help(run_model)' for model execution options.
 ```
 
 Please, type `library(help=spdynmod)` to see available functions.
