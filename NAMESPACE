@@ -1,4 +1,8 @@
+export(animate_bs)
 export(animate_model)
+export(animate_rb)
+export(animate_sm)
+export(animate_ss)
 export(neigh_cell)
 export(plot_maps)
 export(run_model)

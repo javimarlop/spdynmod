@@ -2,13 +2,18 @@
 \alias{run_model}
 \title{Run the model.}
 \usage{
-  run_model(pgr_rb = 0.005, pgr_sm = 0.2, method = "euler",
-    TS = 0.25)
+  run_model(pgr_rb = 0.005, pgr_sm = 0.2, rnd = FALSE,
+    method = "euler", TS = 0.25)
 }
 \arguments{
   \item{pgr_rb}{potential growth rate of reed beds}
 
   \item{pgr_sm}{potential growth rate of salt marsh}
+
+  \item{rnd}{create random initial state variables map. It
+  is calculated based on a script adapted from Murray
+  Efford (University of Auckland, New Zealand) and Santiago
+  Saura (Universidad Politecnica de Madrid, Spain).}
 
   \item{method}{integration method: "lsodes", "euler",
   "rk4", "ode23", "ode45", "adams", "iteration"}

@@ -8,6 +8,8 @@ Author: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>, Babak Naimi
     <naimi.b@gmail.com>, Julia Martinez-Fernandez <juliamf@um.es>
 Maintainer: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>
 Depends:
+    sp,
+    igraph,
     knitr,
     deSolve,
     raster,
@@ -23,3 +25,8 @@ Collate:
     'run_model.R'
     'animate_model.R'
     'plot_maps.R'
+    'rnd_init_maps.R'
+    'animate_bs.R'
+    'animate_ss.R'
+    'animate_sm.R'
+    'animate_rb.R'

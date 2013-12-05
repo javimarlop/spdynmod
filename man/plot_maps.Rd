@@ -2,17 +2,14 @@
 \alias{plot_maps}
 \title{Plot abundance maps of plant communities.}
 \usage{
-  plot_maps(i = 96)
+  plot_maps(year = 2008)
 }
 \arguments{
-  \item{i}{time step to plot (from 1 to 96)}
-
-  \item{inputParameter2}{A description of the input
-  parameter \code{inputParameter2}}
+  \item{year}{year to plot (from 1984 to 2008)}
 }
 \value{
-  by default plots the final plant communities map (i =
-  96). There are 4 maps per year from 1984 to 2008.
+  by default plots the final plant communities map (year =
+  2008).
 }
 \description{
   A more detailed description of what the function is and

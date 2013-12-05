@@ -70,10 +70,10 @@ spdynmod<-function(t,init,parameters,nr,nc) {
 ######### BEGIN DISPERSAL
 #sm_disp<-0
 		w22<-which(sm > 1)
-
-		if (length(w22)>0) {
+#print(length(w22))
+		try(if (length(w22)>0) { # ERROR to be checked with random initial state variables!
 			wg22<-sapply(w22,neigh_cell)
-
+#print(wg22)
 				disp222bs<-sapply(wg22,function(x) x[which(baresoil[x]>=1)]) 
 				which(disp222bs>0)->ind
 				as.numeric(disp222bs[ind])->xs
@@ -96,7 +96,7 @@ spdynmod<-function(t,init,parameters,nr,nc) {
 						#sm_disp<-4
 
 	} 
-}
+})
 ######### END DISPERSAL
 
 	 list(c(dsm,des,drb,dbaresoil))
