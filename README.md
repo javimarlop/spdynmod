@@ -28,7 +28,7 @@ citation('spdynmod')
 
 ### Online wetland and watershed maps
 
-You will see the location map of the study wetland and its waterhsed area by clicking on the `wetland.geojson` and `watershed.geojson` files on the `/inst/extdata` folder.
+You will see the location map of the study wetland and its waterhsed area by clicking on the [wetland.geojson](https://github.com/javimarlop/spdynmod/blob/master/inst/extdata/wetland.geojson) and `watershed.geojson` files on the `/inst/extdata` folder.
 
 ### Slides about the model
 
