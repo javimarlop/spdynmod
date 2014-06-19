@@ -50,7 +50,7 @@ dirs <- 4
 n<- Lx*Ly
 
         ## create rasterLayer
-        require(raster)
+        #require(raster)
 	      layer <- raster(nrows = Lx, ncols = Ly, xmn = 688075, xmx = 690925, ymn = 4173950, ymx = 4176775)
 
         ## step A. Percolation map generation

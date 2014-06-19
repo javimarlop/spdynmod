@@ -2,9 +2,6 @@
 #' 
 #' It requires ImageMagick installed in the system to work.
 #'
-#' @param inputParameter1 A description of the input parameter \code{inputParameter1}
-#' @param inputParameter2 A description of the input parameter \code{inputParameter2}
-#'
 #' @return a GIF animated file
 #'
 #' @keywords animation
@@ -12,7 +9,7 @@
 #' @export
 #' 
 #' @examples
-#' R code here showing how your function works
+#' ## Not run animate_sm()
 
 animate_sm<-function(){
 

@@ -14,7 +14,7 @@
 #' @export
 #' 
 #' @examples
-#' R code here showing how your function works
+#' ## Not run run_model()
 
 run_model<-function(pgr_rb = 0.005, pgr_sm = 0.2, rnd = FALSE, method = 'euler', TS = 0.25){
 

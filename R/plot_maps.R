@@ -1,19 +1,17 @@
 #' Plot abundance maps of plant communities.
 #' 
-#' A more detailed description of what the function is and how
-#' it works. It may be a paragraph that should not be separated
-#' by any spaces. 
+#' Plot abundance maps of plant communities in a given year. 
 #'
 #' @param year year to plot (from 1984 to 2008)
 #'
 #' @return by default plots the final plant communities map (year = 2008).
 #'
-#' @keywords keywords
+#' @keywords plot
 #'
 #' @export
 #' 
 #' @examples
-#' R code here showing how your function works
+#' ## Not run plot_maps()
 
 plot_maps<-function(year = 2008) { 
 

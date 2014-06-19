@@ -1,20 +1,21 @@
 #' Wetland model.
 #' 
-#' A more detailed description of what the function is and how
-#' it works. It may be a paragraph that should not be separated
-#' by any spaces. 
+#' The wetland model function.
 #'
-#' @param inputParameter1 A description of the input parameter \code{inputParameter1}
-#' @param inputParameter2 A description of the input parameter \code{inputParameter2}
+#' @param t time
+#' @param init init
+#' @param parameters model parameters
+#' @param nr number of raster map rows
+#' @param nc number of raster map columns
 #'
-#' @return output A description of the object the function outputs 
+#' @return Model solver
 #'
-#' @keywords keywords
+#' @keywords solver
 #'
 #' @export
 #' 
 #' @examples
-#' R code here showing how your function works
+#' ## Not run spdynmod()
 
 ##if (require(deSolve) == F) {install.packages('deSolve',repos='http://cran.r-project.org');if (require(deSolve) == F) print ('Error: deSolve package is not installed on your machine')}
 

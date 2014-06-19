@@ -1,20 +1,17 @@
 #' A function to identify neighboring cells.
 #' 
-#' A more detailed description of what the function is and how
-#' it works. It may be a paragraph that should not be separated
-#' by any spaces. 
+#' Returns cell numbers of neighboring pixels to a reference cell
 #'
-#' @param inputParameter1 A description of the input parameter \code{inputParameter1}
-#' @param inputParameter2 A description of the input parameter \code{inputParameter2}
+#' @param cell cell number from which to compute neighbor cells
 #'
-#' @return output A description of the object the function outputs 
+#' @return returns cell numbers of neighboring pixels to the reference one
 #'
-#' @keywords keywords
+#' @keywords neighborhood
 #'
 #' @export
 #' 
 #' @examples
-#' R code here showing how your function works
+#' ## Not run neigh_cell(n)
 
  neigh_cell<-function(cell) {
 	c<-ceiling(cell/nr); r<-(cell+nr-c*nr)

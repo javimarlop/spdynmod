@@ -17,16 +17,5 @@ Depends:
     rgdal
 License: GPL (>= 2)
 LazyData: true
-Collate:
-    'mc_dynmodv2_7_functions.R'
-    'neigh_cell.R'
-    'spdynmod-package.r'
-    'spdynmod.R'
-    'run_model.R'
-    'animate_model.R'
-    'plot_maps.R'
-    'rnd_init_maps.R'
-    'animate_bs.R'
-    'animate_ss.R'
-    'animate_sm.R'
-    'animate_rb.R'
+Suggests:
+    testthat
