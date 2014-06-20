@@ -145,6 +145,7 @@ n<- Lx*Ly
         values(clumped2)[notfilledCells] <- randomType
         #if (plt) plot(clumped2, useRaster = FALSE, col=c("red","green"))
 
+c3<<-NULL
 clumped + clumped2 ->> c3
 }        
 

@@ -22,16 +22,39 @@
 ############# MODEL
 spdynmod<-function(t,init,parameters,nr,nc) { 
 
-	NN<-nr*nc
-	sm <- matrix(nr=nr,nc=nc,init[1:NN])
-	es <- matrix(nr=nr,nc=nc,init[(NN+1):(2*NN)])
-	rb <- matrix(nr=nr,nc=nc,init[((2*NN)+1):(3*NN)])
-	baresoil <- matrix(nr=nr,nc=nc,init[((3*NN)+1):(4*NN)])
+nc<<-NULL
+nr<<-NULL
+NN<<-NULL
+
+r<- raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
+nr<<-dim(r)[1]
+nc<<-dim(r)[2]
+
+fak<-NULL
+fak<- raster(paste(rpath,'/log_cr10_acum_rm_t1_aver.asc',sep=''))
+
+avd<-NULL
+avd<- raster(paste(rpath,'/ramblas_cr10_dist_t1_ave.asc',sep=''))
+
+fa_avd<-NULL
+fa_avd<-fak+(1-avd)
+
+dr1<-NULL
+dr2<-NULL
+dr1<- raster(paste(rpath,'/rambla11_cr10_dist_t1.asc',sep='')) 
+dr2<- raster(paste(rpath,'/rambla22_cr10_dist_t1.asc',sep='')) 
+
+
+	NN<<-nr*nc
+	sm <- matrix(nrow=nr,ncol=nc,init[1:NN])
+	es <- matrix(nrow=nr,ncol=nc,init[(NN+1):(2*NN)])
+	rb <- matrix(nrow=nr,ncol=nc,init[((2*NN)+1):(3*NN)])
+	baresoil <- matrix(nrow=nr,ncol=nc,init[((3*NN)+1):(4*NN)])
 	drambla1<-raster::as.matrix(dr1) 
 	drambla2<-raster::as.matrix(dr2) 
 	fa_avd2<-raster::as.matrix(fa_avd)
 
-	Time <<- t
+	Time <- t
 	tprb <- parameters['tprb']
 	tpsm <- parameters['tpsm']
 

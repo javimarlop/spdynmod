@@ -22,24 +22,16 @@ print(paste('random initial maps = ',rnd))
 
 rpath = system.file("extdata",package="spdynmod")
 
-r<<- raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
+r<- raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
 
-fak<<- raster(paste(rpath,'/log_cr10_acum_rm_t1_aver.asc',sep=''))
-
-dr1<<- raster(paste(rpath,'/rambla11_cr10_dist_t1.asc',sep='')) 
-dr2<<- raster(paste(rpath,'/rambla22_cr10_dist_t1.asc',sep='')) 
-
-avd<<- raster(paste(rpath,'/ramblas_cr10_dist_t1_ave.asc',sep=''))
-
-fa_avd<<-fak+(1-avd)
-
-rb_init<<-raster(paste(rpath,'/mc84_34.asc',sep=''))
+rb_init<-raster(paste(rpath,'/mc84_34.asc',sep=''))
 
 if(rnd == TRUE){
 
 ### initial random maps generation
 
 #r<-raster('mc84_1_reclass.asc')
+
 rnd_init_maps()
 r2<-raster(paste(rpath,'/r2.asc',sep=''))
 
@@ -60,9 +52,9 @@ bs<-rr2==4
 #rm(list=ls())
 # SPATIAL PARAMETERS #
 #require(raster)
-es_init <<- reclassify(es,matrix(c(1,24),ncol=2,byrow=T),right=NA)
-sm_init<<- reclassify(sm,matrix(c(1,24),ncol=2,byrow=T),right=NA)
-baresoil_init<<- reclassify(bs,matrix(c(1,24),ncol=2,byrow=T),right=NA)
+es_init <- reclassify(es,matrix(c(1,24),ncol=2,byrow=T),right=NA)
+sm_init<- reclassify(sm,matrix(c(1,24),ncol=2,byrow=T),right=NA)
+baresoil_init<- reclassify(bs,matrix(c(1,24),ncol=2,byrow=T),right=NA)
 }
 
 
@@ -70,27 +62,32 @@ if(rnd == FALSE){
 
 #rpath = '/net/netapp2/H05_Homes/majavie/spdynmod/inst/extdata'
 
-es_init<<-raster(paste(rpath,'/mc84_1_reclass3.asc',sep=''))
+es_init<-raster(paste(rpath,'/mc84_1_reclass3.asc',sep=''))
 
-sm_init<<-raster(paste(rpath,'/mc84_2_reclass3.asc',sep=''))
+sm_init<-raster(paste(rpath,'/mc84_2_reclass3.asc',sep=''))
 
-baresoil_init<<-raster(paste(rpath,'/mc84_4_reclass3.asc',sep=''))
+baresoil_init<-raster(paste(rpath,'/mc84_4_reclass3.asc',sep=''))
 }
+
+nc<<-NULL
+nr<<-NULL
+NN<<-NULL
 
 nr<<-dim(r)[1]
 nc<<-dim(r)[2]
-NN<<-nr*nc
+NN<-nr*nc
 
 ### state variables ###
-st <<- c(raster::as.vector(raster::as.matrix(sm_init)), raster::as.vector(raster::as.matrix(es_init)),raster::as.vector(raster::as.matrix(rb_init)),raster::as.vector(raster::as.matrix(baresoil_init)))
+st <- c(raster::as.vector(raster::as.matrix(sm_init)), raster::as.vector(raster::as.matrix(es_init)),raster::as.vector(raster::as.matrix(rb_init)),raster::as.vector(raster::as.matrix(baresoil_init)))
 
 ### parameters ###
-parms <<- c(tprb = pgr_rb, tpsm = pgr_sm)# tpsm = 0.01
+parms <- c(tprb = pgr_rb, tpsm = pgr_sm)# tpsm = 0.01
 
 ### model specs and execution ###
 ##source('mc_dynmodv2_7_functions.R')
-DT <<- TS
-time <- seq(0.001,24,DT)
+DT <- TS
 
+time <- seq(0.001,24,DT)
+out<-NULL
 out <<- deSolve::ode.2D(func=spdynmod,y=st,times=time,parms=parms,method=method,nspec = 4, dimens = c(nr, nc),nr=nr,nc=nc,names=c('Salt marsh','Salt steppe','Reed beds','Bare soil'))
 }
