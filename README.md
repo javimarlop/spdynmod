@@ -12,6 +12,12 @@ library(devtools)
 install_github('spdynmod',username='javimarlop')
 ```
 
+## Animation of model results
+
+Animation of model results based on default parameters.
+
+![Animation of model results](movie.gif)
+
 ## How to run the model
 
 Please type `help(run_model)` for model execution options and `library(help=spdynmod)` to see all available functions in the library.
