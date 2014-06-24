@@ -75,7 +75,7 @@ NN<<-NULL
 
 nr<<-dim(r)[1]
 nc<<-dim(r)[2]
-NN<-nr*nc
+NN<<-nr*nc
 
 ### state variables ###
 st <- c(raster::as.vector(raster::as.matrix(sm_init)), raster::as.vector(raster::as.matrix(es_init)),raster::as.vector(raster::as.matrix(rb_init)),raster::as.vector(raster::as.matrix(baresoil_init)))

@@ -13,6 +13,11 @@
 
 animate_bs<-function(){
 
+out<-get('out')
+nr<-get('nr')
+nc<-get('nc')
+NN<-get('NN')
+
 brks <- seq(0, 30, by=1) 
 nb <- length(brks)-1 
 

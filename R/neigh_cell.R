@@ -14,6 +14,10 @@
 #' ## Not run neigh_cell(n)
 
  neigh_cell<-function(cell) {
+
+	nr<-get('nr')
+	nc<-get('nc')
+
 	c<-ceiling(cell/nr); r<-(cell+nr-c*nr)
 	v.c<-c(c,c+1,c+1,c+1,c,c-1,c-1,c-1)
 	v.r<-c(r+1,r+1,r,r-1,r-1,r-1,r,r+1)

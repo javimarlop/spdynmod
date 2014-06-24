@@ -15,6 +15,11 @@
 
 plot_maps<-function(year = 2008) { 
 
+out<-get('out')
+nr<-get('nr')
+nc<-get('nc')
+NN<-get('NN')
+
 i <- (year-1984)*4
 
 if(i==0){i = 1}

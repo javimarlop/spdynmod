@@ -22,13 +22,17 @@
 ############# MODEL
 spdynmod<-function(t,init,parameters,nr,nc) { 
 
-nc<<-NULL
-nr<<-NULL
-NN<<-NULL
+nr<-get('nr')
+nc<-get('nc')
+NN<-get('NN')
 
-r<- raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
-nr<<-dim(r)[1]
-nc<<-dim(r)[2]
+#nc<<-NULL
+#nr<<-NULL
+#NN<-NULL
+
+#r<- raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
+#nr<<-dim(r)[1]
+#nc<<-dim(r)[2]
 
 fak<-NULL
 fak<- raster(paste(rpath,'/log_cr10_acum_rm_t1_aver.asc',sep=''))
@@ -45,7 +49,7 @@ dr1<- raster(paste(rpath,'/rambla11_cr10_dist_t1.asc',sep=''))
 dr2<- raster(paste(rpath,'/rambla22_cr10_dist_t1.asc',sep='')) 
 
 
-	NN<<-nr*nc
+	#NN<<-nr*nc
 	sm <- matrix(nrow=nr,ncol=nc,init[1:NN])
 	es <- matrix(nrow=nr,ncol=nc,init[(NN+1):(2*NN)])
 	rb <- matrix(nrow=nr,ncol=nc,init[((2*NN)+1):(3*NN)])
