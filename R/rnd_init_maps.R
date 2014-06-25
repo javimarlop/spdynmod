@@ -147,6 +147,7 @@ n<- Lx*Ly
 
 c3<<-NULL
 clumped + clumped2 ->> c3
+#return(c3)
 }        
 
         

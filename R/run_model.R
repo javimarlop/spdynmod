@@ -39,6 +39,7 @@ r2<-raster(paste(rpath,'/r2.asc',sep=''))
 	#rr[]<-abs(round(rnorm(13000,mean=2,sd=0.5)))
 #!is.na(c3@data@values)->index
 #	c3@data@values[index]->rr[]
+c3<-get('c3')
 rr2<-c3-r2
 es<-rr2==3
 sm<-rr2==2
@@ -76,6 +77,10 @@ NN<<-NULL
 nr<<-dim(r)[1]
 nc<<-dim(r)[2]
 NN<<-nr*nc
+
+nr<-get('nr')
+nc<-get('nc')
+NN<-get('NN')
 
 ### state variables ###
 st <- c(raster::as.vector(raster::as.matrix(sm_init)), raster::as.vector(raster::as.matrix(es_init)),raster::as.vector(raster::as.matrix(rb_init)),raster::as.vector(raster::as.matrix(baresoil_init)))
