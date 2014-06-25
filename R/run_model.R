@@ -95,4 +95,9 @@ DT <- TS
 time <- seq(0.001,24,DT)
 out<-NULL
 out <<- deSolve::ode.2D(func=spdynmod,y=st,times=time,parms=parms,method=method,nspec = 4, dimens = c(nr, nc),nr=nr,nc=nc,names=c('Salt marsh','Salt steppe','Reed beds','Bare soil'))
+
+if (exists('c3')){
+rm(c3,pos=1)
+}
+
 }

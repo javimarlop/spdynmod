@@ -146,8 +146,8 @@ n<- Lx*Ly
         #if (plt) plot(clumped2, useRaster = FALSE, col=c("red","green"))
 
 c3<<-NULL
-clumped + clumped2 ->> c3
-#return(c3)
+c3<<-clumped + clumped2
+c3<-get('c3')
 }        
 
         
