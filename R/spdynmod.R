@@ -35,18 +35,18 @@ NN<-get('NN')
 #nc<<-dim(r)[2]
 
 fak<-NULL
-fak<- raster(paste(rpath,'/log_cr10_acum_rm_t1_aver.asc',sep=''))
+fak<- raster::raster(paste(rpath,'/log_cr10_acum_rm_t1_aver.asc',sep=''))
 
 avd<-NULL
-avd<- raster(paste(rpath,'/ramblas_cr10_dist_t1_ave.asc',sep=''))
+avd<- raster::raster(paste(rpath,'/ramblas_cr10_dist_t1_ave.asc',sep=''))
 
 fa_avd<-NULL
 fa_avd<-fak+(1-avd)
 
 dr1<-NULL
 dr2<-NULL
-dr1<- raster(paste(rpath,'/rambla11_cr10_dist_t1.asc',sep='')) 
-dr2<- raster(paste(rpath,'/rambla22_cr10_dist_t1.asc',sep='')) 
+dr1<- raster::raster(paste(rpath,'/rambla11_cr10_dist_t1.asc',sep='')) 
+dr2<- raster::raster(paste(rpath,'/rambla22_cr10_dist_t1.asc',sep='')) 
 
 
 	#NN<<-nr*nc

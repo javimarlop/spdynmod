@@ -23,13 +23,13 @@ nb <- length(brks)-1
 
 #require(animation)
 
-saveGIF({
+animation::saveGIF({
 for (i in seq(1, dim(out)[1], by = 1)){
  i2<-seq(1984.25,2008,0.25)
  par(mfrow=c(2,1))
  par(mar=c(2,1,2,0.8))
- plot(raster(matrix(nrow = nr, ncol = nc, out[i, (3*NN+2):(4*NN+1)])),breaks=brks, col=rev(topo.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Bare Soil")
- plot(raster(matrix(nrow = nr, ncol = nc, out[i, (NN+2):(2*NN+1)])),breaks=brks, col=rev(topo.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Salt Steppe")
+ #plot(raster::raster(matrix(nrow = nr, ncol = nc, out[i, (3*NN+2):(4*NN+1)])),breaks=brks, col=rev(topo.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Bare Soil")
+ plot(raster::raster(matrix(nrow = nr, ncol = nc, out[i, (NN+2):(2*NN+1)])),breaks=brks, col=rev(topo.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Salt Steppe")
  par(mar=c(13,1,3,1.5))
  print(barplot(i2[i],col="black",horiz=T,xlim=c(1984,2008),axes=F,cex.sub=1.4, main="Time",cex.main=1.5))
  par(las=2)

@@ -51,35 +51,35 @@ n<- Lx*Ly
 
         ## create rasterLayer
         #require(raster)
-	      layer <- raster(nrows = Lx, ncols = Ly, xmn = 688075, xmx = 690925, ymn = 4173950, ymx = 4176775)
+	      layer <- raster::raster(nrows = Lx, ncols = Ly, xmn = 688075, xmx = 690925, ymn = 4173950, ymx = 4176775)
 
         ## step A. Percolation map generation
-        values(layer) <- rep(0, Lx*Ly)
-        values(layer)[sample.int(Lx*Ly, round(Lx*Ly*p))] <- 1   ## as close as possible
+        raster::values(layer) <- rep(0, Lx*Ly)
+        raster::values(layer)[sample.int(Lx*Ly, round(Lx*Ly*p))] <- 1   ## as close as possible
         #if (plt) plot(layer, useRaster = FALSE, col=c("white","black")) ## plots selected cells in black (cells with a value of in the percolation map)
         ## the cells with a value of 1 in the percolation map will be distributed among non-habitat (class 1) and habitat (class 2) in step C
         
         ## step B. Cluster identification (clustering of adjoining pixels)
-        clumped <- clump(layer, directions=dirs, gaps = FALSE)
+        clumped <- raster::clump(layer, directions=dirs, gaps = FALSE)
         
         ## step C. Cluster type assignment
         ## ncluster is the number of clusters with a value of 1 in the percolation map
-        ncluster <- max(values(clumped), na.rm = TRUE)
+        ncluster <- max(raster::values(clumped), na.rm = TRUE)
         types <- factor(c(0,1))          # non-habitat, habitat
         numTypes <- as.numeric(types)    # 1(non-habitat),2(habitat)
         ## this now assigns the clusters either to 1 (non-habitat) or 2 (habitat)
         clustertype <- sample(numTypes, ncluster, replace = TRUE, prob = c(1-A,A))
-        values(clumped) <- clustertype[values(clumped)]
+        raster::values(clumped) <- clustertype[raster::values(clumped)]
         #if (plt) plot(clumped, useRaster = FALSE, col=c("red","green")) ## in black the provisional non-habitat (class 1) and in green the provisional habitat (class2)
         ## this provisional assignment will be extended to the full image (the pixels with 0 in the inital percolation map) in step D.
 
         ## step D. Filling in image
-        cellsUnassigned <- (1:n)[is.na(values(clumped))]
-        cellsAssigned <- (1:n)[!is.na(values(clumped))]
-        tempadj <- adjacent(clumped, cellsUnassigned, cellsAssigned, directions = 8)
+        cellsUnassigned <- (1:n)[is.na(raster::values(clumped))]
+        cellsAssigned <- (1:n)[!is.na(raster::values(clumped))]
+        tempadj <- raster::adjacent(clumped, cellsUnassigned, cellsAssigned, directions = 8)
         tempadj <- split(tempadj[,2], tempadj[,1])
         fillinType <- function (adjcells) {
-            type <- values(clumped)[adjcells]
+            type <- raster::values(clumped)[adjcells]
             type <- factor(type)
             freq <- tabulate(type)
             result <- as.numeric(levels(type)[freq == max(freq)])
@@ -90,44 +90,44 @@ n<- Lx*Ly
         # cells with typed neighbours
         filled <- sapply(tempadj, fillinType)
         filledCells <- as.numeric(names(filled))
-        values(clumped)[filledCells] <- filled
+        raster::values(clumped)[filledCells] <- filled
         # cells with no typed neighbours
         notfilledCells <- cellsUnassigned[!(cellsUnassigned %in% filledCells)]
         randomType <- sample(numTypes, length(notfilledCells), replace = TRUE, prob = c(1-A,A))
-        values(clumped)[notfilledCells] <- randomType
+        raster::values(clumped)[notfilledCells] <- randomType
         #if (plt) plot(clumped, useRaster = FALSE, col=c("red","green"))
 
 ## second map
 
-	      layer <- raster(nrows = Lx, ncols = Ly, xmn = 688075, xmx = 690925, ymn = 4173950, ymx = 4176775)
+	      layer <- raster::raster(nrows = Lx, ncols = Ly, xmn = 688075, xmx = 690925, ymn = 4173950, ymx = 4176775)
 
         ## step A. Percolation map generation
-        values(layer) <- rep(0, Lx*Ly)
-        values(layer)[sample.int(Lx*Ly, round(Lx*Ly*p))] <- 1   ## as close as possible
+        raster::values(layer) <- rep(0, Lx*Ly)
+        raster::values(layer)[sample.int(Lx*Ly, round(Lx*Ly*p))] <- 1   ## as close as possible
         #if (plt) plot(layer, useRaster = FALSE, col=c("white","black")) ## plots selected cells in black (cells with a value of in the percolation map)
         ## the cells with a value of 1 in the percolation map will be distributed among non-habitat (class 1) and habitat (class 2) in step C
         
         ## step B. Cluster identification (clustering of adjoining pixels)
-        clumped2 <- clump(layer, directions=dirs, gaps = FALSE)
+        clumped2 <- raster::clump(layer, directions=dirs, gaps = FALSE)
         
         ## step C. Cluster type assignment
         ## ncluster is the number of clusters with a value of 1 in the percolation map
-        ncluster <- max(values(clumped2), na.rm = TRUE)
+        ncluster <- max(raster::values(clumped2), na.rm = TRUE)
         types <- factor(c(0,1))          # non-habitat, habitat
         numTypes <- as.numeric(types)    # 1(non-habitat),2(habitat)
         ## this now assigns the clusters either to 1 (non-habitat) or 2 (habitat)
         clustertype <- sample(numTypes, ncluster, replace = TRUE, prob = c(1-A,A))
-        values(clumped2) <- clustertype[values(clumped2)]
+        raster::values(clumped2) <- clustertype[raster::values(clumped2)]
        # if (plt) plot(clumped2, useRaster = FALSE, col=c("red","green")) ## in black the provisional non-habitat (class 1) and in green the provisional habitat (class2)
         ## this provisional assignment will be extended to the full image (the pixels with 0 in the inital percolation map) in step D.
 
         ## step D. Filling in image
-        cellsUnassigned <- (1:n)[is.na(values(clumped2))]
-        cellsAssigned <- (1:n)[!is.na(values(clumped2))]
-        tempadj <- adjacent(clumped2, cellsUnassigned, cellsAssigned, directions = 8)
+        cellsUnassigned <- (1:n)[is.na(raster::values(clumped2))]
+        cellsAssigned <- (1:n)[!is.na(raster::values(clumped2))]
+        tempadj <- raster::adjacent(clumped2, cellsUnassigned, cellsAssigned, directions = 8)
         tempadj <- split(tempadj[,2], tempadj[,1])
         fillinType <- function (adjcells) {
-            type <- values(clumped2)[adjcells]
+            type <- raster::values(clumped2)[adjcells]
             type <- factor(type)
             freq <- tabulate(type)
             result <- as.numeric(levels(type)[freq == max(freq)])
@@ -138,11 +138,11 @@ n<- Lx*Ly
         # cells with typed neighbours
         filled <- sapply(tempadj, fillinType)
         filledCells <- as.numeric(names(filled))
-        values(clumped2)[filledCells] <- filled
+        raster::values(clumped2)[filledCells] <- filled
         # cells with no typed neighbours
         notfilledCells <- cellsUnassigned[!(cellsUnassigned %in% filledCells)]
         randomType <- sample(numTypes, length(notfilledCells), replace = TRUE, prob = c(1-A,A))
-        values(clumped2)[notfilledCells] <- randomType
+        raster::values(clumped2)[notfilledCells] <- randomType
         #if (plt) plot(clumped2, useRaster = FALSE, col=c("red","green"))
 
 c3<<-NULL

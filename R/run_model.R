@@ -22,9 +22,9 @@ print(paste('random initial maps = ',rnd))
 
 rpath = system.file("extdata",package="spdynmod")
 
-r<- raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
+r<- raster::raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
 
-rb_init<-raster(paste(rpath,'/mc84_34.asc',sep=''))
+rb_init<-raster::raster(paste(rpath,'/mc84_34.asc',sep=''))
 
 if(rnd == TRUE){
 
@@ -33,7 +33,7 @@ if(rnd == TRUE){
 #r<-raster('mc84_1_reclass.asc')
 
 rnd_init_maps()
-r2<-raster(paste(rpath,'/r2.asc',sep=''))
+r2<-raster::raster(paste(rpath,'/r2.asc',sep=''))
 
 #rr <- r
 	#rr[]<-abs(round(rnorm(13000,mean=2,sd=0.5)))
@@ -53,9 +53,9 @@ bs<-rr2==4
 #rm(list=ls())
 # SPATIAL PARAMETERS #
 #require(raster)
-es_init <- reclassify(es,matrix(c(1,24),ncol=2,byrow=T),right=NA)
-sm_init<- reclassify(sm,matrix(c(1,24),ncol=2,byrow=T),right=NA)
-baresoil_init<- reclassify(bs,matrix(c(1,24),ncol=2,byrow=T),right=NA)
+es_init <- raster::reclassify(es,matrix(c(1,24),ncol=2,byrow=T),right=NA)
+sm_init<- raster::reclassify(sm,matrix(c(1,24),ncol=2,byrow=T),right=NA)
+baresoil_init<- raster::reclassify(bs,matrix(c(1,24),ncol=2,byrow=T),right=NA)
 }
 
 
@@ -63,11 +63,11 @@ if(rnd == FALSE){
 
 #rpath = '/net/netapp2/H05_Homes/majavie/spdynmod/inst/extdata'
 
-es_init<-raster(paste(rpath,'/mc84_1_reclass3.asc',sep=''))
+es_init<-raster::raster(paste(rpath,'/mc84_1_reclass3.asc',sep=''))
 
-sm_init<-raster(paste(rpath,'/mc84_2_reclass3.asc',sep=''))
+sm_init<-raster::raster(paste(rpath,'/mc84_2_reclass3.asc',sep=''))
 
-baresoil_init<-raster(paste(rpath,'/mc84_4_reclass3.asc',sep=''))
+baresoil_init<-raster::raster(paste(rpath,'/mc84_4_reclass3.asc',sep=''))
 }
 
 nc<<-NULL
