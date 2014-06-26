@@ -36,8 +36,7 @@ VignetteBuilder: knitr
 Imports:
     deSolve,
     raster,
-    animation,
-    rgdal
+    animation
 Suggests:
     knitr,
     testthat
