@@ -28,7 +28,11 @@ Author: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>, Babak Naimi
     <naimi.b@gmail.com>, Julia Martinez-Fernandez <juliamf@um.es>
 Maintainer: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>
 License: GPL (>= 2)
-LazyData: true
+URL: https://github.com/javimarlop/spdynmod
+BugReports: http://github.com/javimarlop/spdynmod/issues
+LazyLoad: yes
+LazyData: yes
+VignetteBuilder: knitr
 Imports:
     deSolve,
     raster,
@@ -37,5 +41,3 @@ Imports:
 Suggests:
     knitr,
     testthat
-URL: https://github.com/javimarlop/spdynmod
-VignetteBuilder: knitr
