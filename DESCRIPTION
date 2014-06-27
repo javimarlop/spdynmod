@@ -4,7 +4,7 @@ Title: Spatio-dynamic wetland plant communities model
 Description: A spatio-dynamic modelling package that focuses on three
     characteristic wetland plant communities in a semiarid Mediterranean
     wetland in response to hydrological pressures from the catchment. The
-    package includes the data on waterhsed hydrological pressure and the
+    package includes the data on watershed hydrological pressure and the
     initial raster maps of plant communities but also allows for random inital
     distribution of plant communities. Ongoing developments of the package
     focus on offering easy to use tools for creating other spatio-dynamic
