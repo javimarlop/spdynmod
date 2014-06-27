@@ -3,7 +3,7 @@
 \name{spdynmod}
 \alias{spdynmod}
 \alias{spdynmod-package}
-\title{spdynmod}
+\title{spdynmod model}
 \usage{
 spdynmod(t, init, parameters, nr, nc)
 }
@@ -22,7 +22,7 @@ spdynmod(t, init, parameters, nr, nc)
 Model solver
 }
 \description{
-spdynmod
+spdynmod model
 
 The wetland model function.
 }

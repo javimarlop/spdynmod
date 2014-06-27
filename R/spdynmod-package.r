@@ -1,4 +1,4 @@
-#' spdynmod
+#' spdynmod model
 #'
 #' @name spdynmod
 #' @docType package

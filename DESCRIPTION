@@ -1,29 +1,16 @@
 Package: spdynmod
 Type: Package
 Title: Spatio-dynamic wetland plant communities model
-Description: A spatio-dynamic modelling package that aims to explain the
-    spatial distribution of three characteristic wetland plant communities in a
-    semiarid Mediterranean wetland in response to hydrological pressures from
-    the catchment. Semiarid Mediterranean saline wetlands are semi-terrestrial
-    ecosystems, which yearly undergo dry periods of several months. In the last
-    decades, hydrological alterations have affected characteristic wetland
-    plant communities, resulting in the replacement of valuable halophilic salt
-    marsh and salt steppe plant communities by more generalist and
-    opportunistic taxa like reed beds ({\it Phragmites australis}). A dynamic
-    model was initially developed using Stella software and then converted into
-    R by means of the StellaR (http://stella-r.sourceforge.net/) software.
-    Spatial dimension was added including neighborhood and spatial flows
-    algorithms representing plant communities dispersion. The conversion
-    between plant communities is mediated by the increase in water inflows from
-    the watershedand two main wetland spatial parameters: (1) the distance to
-    two ephemeral rivers crossing the wetlands and (2) the flow accumulation
-    map within the wetland site. The package includes the data on waterhsed
-    hydrological pressure and the initial raster maps of plant communities but
-    also allows for random inital distribution of plant communities. Ongoing
-    developments of package focus on offering flexible tools for creating new
-    spatio-dynamic models in the next versions.
+Description: A spatio-dynamic modelling package that focuses on three
+    characteristic wetland plant communities in a semiarid Mediterranean
+    wetland in response to hydrological pressures from the catchment. The
+    package includes the data on waterhsed hydrological pressure and the
+    initial raster maps of plant communities but also allows for random inital
+    distribution of plant communities. Ongoing developments of the package
+    focus on offering easy to use tools for creating other spatio-dynamic
+    models.
 Version: 1.0
-Date: 2014/06/26
+Date: 2014/06/27
 Author: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>, Babak Naimi
     <naimi.b@gmail.com>, Julia Martinez-Fernandez <juliamf@um.es>
 Maintainer: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>
@@ -39,4 +26,5 @@ Imports:
     animation
 Suggests:
     knitr,
+    roxygen2,
     testthat
