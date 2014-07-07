@@ -7,7 +7,7 @@ spdynmod
 
 Development version of the R library Spdynmod: Spatio-dynamic wetland plant communities model
 
-The stable version can be found on [CRAN]()
+The stable version can be found on [CRAN](http://cran.r-project.org/web/packages/spdynmod/index.html)
 
 ## How to install the spdynmod R library
 
