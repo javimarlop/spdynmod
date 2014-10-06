@@ -51,3 +51,29 @@ You can see the location map of the study wetland and its watershed area by clic
 ### Slides about the model
 
 [Martínez-López J.](http://webs.um.es/javier.martinez/miwiki/lib/exe/fetch.php?id=inicio&cache=cache&media=isem2013_jml.pdf), Martínez-Fernández J. , Naimi B., Carreño M. F., Esteve M. A. 2013. Spatio-temporal dynamic modeling of plant communities responses to hydrological pressures in a semiarid Mediterranean wetland. Ecological Modelling for Ecosystem Sustainability in the context of Global Change - ISEM 2013. Toulouse, France.
+
+## Model validation
+
+A mutiple resolution goodness of fit assessment has been performed for each validation year after Costanza 1989 and Kuhnert et al. 2005. We implemented the version modified by Kuhnert et al. in order to exclude NA values from the analysis. The maps and R scripts needed to perform this assessment are prepared for parallel computing and can be found under `inst/maps_validation`.
+
+@article{,
+title = "{Model goodness of fit: A multiple resolution procedure}",
+journal = "Ecological Modelling ",
+volume = "47",
+number = "3--4",
+pages = "199 - 215",
+year = "1989",
+author = "Robert Costanza"
+}
+
+@Article{,
+Title = {Comparing Raster Map Comparison Algorithms for Spatial Modeling and Analysis},
+Author = {Kuhnert, Matthias and Voinov, Alexey and Seppelt, Ralf},
+Journal = {Photogrammetric Engineering \& Remote Sensing},
+Year = {2005},
+Month = aug,
+Number = {8},
+Pages = {975--984},
+Volume = {71}
+}
+
