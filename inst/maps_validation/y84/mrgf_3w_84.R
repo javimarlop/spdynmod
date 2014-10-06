@@ -1,0 +1,53 @@
+mrgf3b<-function(i){
+
+ vi<-getValues(mc84_fin_reclass)[i]
+ cats<-getValues(mc84_fin_reclass)[neigh_cell(i)]
+ val0<-c(vi,cats)
+ val<-val0[!is.na(val0)]
+ length(val)->wdata
+
+ vir<-getValues(mc84_fin_reclass)[i]
+ catsr<-getValues(mc84_fin_reclass)[neigh_cell(i)]
+ valr0<-c(vir,catsr)
+ valr<-valr0[!is.na(valr0)]
+ unique(val)->cval
+ length(cval)->lca
+ ads<-NULL
+  if(lca>0){
+	for(j in 1:lca){
+	a1<-length(val[val==cval[j]])
+	a2<-length(valr[valr==cval[j]])
+	ad<-abs(a1-a2)
+	ads[j]<-ad
+	}
+
+ fit<-1-(sum(ads,na.rm=T)/(2*wdata))
+
+ return(fit)
+}
+}
+
+require(raster)
+#require(parallel)
+require(multicore) # install.packages('multicore',,'http://www.rforge.net/')
+source('neigh_cell.R')
+mc84_fin_reclass<-raster('mc84_fin_reclass.asc')
+mc84_fin_reclass<-raster('mc84_fin_reclass.asc')
+mc84_fin_reclass@nrows->nr
+mc84_fin_reclass@ncols->nc
+
+getValues(mc84_fin_reclass)->val_index
+getValues(mc84_fin_reclass)->val_indexr
+
+which(!is.na(getValues(mc84_fin_reclass)))->val_index2
+length(val_index2)->lc
+results3<-NULL
+fitw3_84<<-NULL
+
+mrgf3<-function(){
+ltw<-seq(1,lc)
+results3<-mclapply(ltw,mrgf3b)
+fitw3_84<<-sum(unlist(results3),na.rm=T)/length(unlist(results3))
+return(fitw3_84)
+}
+
