@@ -24,7 +24,7 @@ print(es)
 den<-sum(es,na.rm=T)
 print(den)
 
-ft92<-num/den
+ft92<<-num/den
 ft92
 
 }

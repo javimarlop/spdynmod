@@ -54,7 +54,7 @@ You can see the location map of the study wetland and its watershed area by clic
 
 ## Model validation
 
-A **mutiple resolution goodness of fit** assessment has been performed for each validation year after *Costanza 1989* and *Kuhnert et al. 2005*. We implemented the version modified by Kuhnert et al. in order to exclude NA values from the analysis. The maps and R scripts needed to perform this assessment are prepared for parallel computing and can be found under `inst/maps_validation`.
+A **mutiple resolution goodness of fit** assessment has been performed for each validation year after *Costanza 1989* and *Kuhnert et al. 2005*. We implemented the version modified by Kuhnert et al. in order to exclude NA values from the analysis. The maps and R scripts needed to perform this assessment can be found under `inst/maps_validation`.
 
 @article{,
 title = "{Model goodness of fit: A multiple resolution procedure}",
