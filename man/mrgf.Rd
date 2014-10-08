@@ -27,7 +27,8 @@ Ft weighted overall fit
 Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989.
 }
 \examples{
-## Not run mrgf(a='y1992_rs.asc',b='y1992_mod.asc',w1=1,w2=113,year='1992',k=0)
+## Not run rpath = system.file("extdata",package="spdynmod")
+## Not run mrgf(a=paste(rpath,'/y1992_rs.asc',sep=''),b=paste(rpath,'/y1992_mod.asc',sep=''),w1=1,w2=113,year='1992',k=0)
 }
 \keyword{Fit}
 \keyword{Goodness}
