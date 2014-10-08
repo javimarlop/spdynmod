@@ -36,21 +36,25 @@ Please type `help(run_model)` for model execution options and `library(help=spdy
 run_model()
 ```
 
-## Model validation
-
-A **mutiple resolution goodness of fit** assessment has been performed for each validation year after *Costanza 1989* and *Kuhnert et al. 2005*. We implemented the version modified by Kuhnert et al. in order to exclude NA values from the analysis. The maps and R script needed to perform this assessment, as well as the results, can be found under `inst/maps_validation`.
-
 ## How to cite this model library
 
 ```
 citation('spdynmod')
 ```
 
-## Supplementary material
-
-### Online wetland and watershed maps
+### Wetland and watershed maps
 
 You can see the location map of the study wetland and its watershed area by clicking on the [wetland.geojson](https://github.com/javimarlop/spdynmod/blob/master/inst/extdata/wetland.geojson) and [watershed.geojson](https://github.com/javimarlop/spdynmod/blob/master/inst/extdata/watershed.geojson) files on the `/inst/extdata` folder.
+
+## Model validation
+
+A **mutiple resolution goodness of fit** assessment function `mrgf` was included in the library and has been performed for each validation year after *Costanza 1989* and *Kuhnert et al. 2005*. We implemented the version modified by Kuhnert et al. in order to exclude NA values from the analysis. The maps needed to perform this assessment can be found on the `inst/extdata` folder. See resulting graphs:
+
+![Year 1992](mrgf_1992k0.png)
+![Year 1995](mrgf_1995k0.png)
+![Year 1997](mrgf_1997k0.png)
+![Year 2001](mrgf_2001k0.png)
+![Year 2008](mrgf_2008k0.png)
 
 ### References
 

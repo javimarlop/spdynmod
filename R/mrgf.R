@@ -1,5 +1,29 @@
-## Script by Javier Martinez-Lopez (UTF-8)
-## Creative Commons Attribution-ShareAlike 3.0 Unported License
+#' A function to perform Multiple Resolution Goodness of Fit.
+#' 
+#' Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989.
+#'
+#' @param a a reference map
+#'
+#' @param b b simulated map
+#'
+#' @param w1 w1 initial window size
+#'
+#' @param w2 w2 final window size
+#'
+#' @param year year validation year
+#'
+#' @param k k parameter for weighting Ft with lower/larger windows resolutions
+#'
+#' @return Fw vector of fits for each window size
+#'
+#' @return Ft weighted overall fit
+#'
+#' @keywords Multiple Resolution Goodness Fit
+#'
+#' @export
+#' 
+#' @examples
+#' ## Not run mrgf(a='y1992_rs.asc',b='y1992_mod.asc',w1=1,w2=113,year='1992',k=0)
 
 mrgf<-function(a='',b='',w1=1,w2=113,year='',k=0){
 require(raster)

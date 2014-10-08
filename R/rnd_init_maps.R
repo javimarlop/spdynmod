@@ -1,5 +1,5 @@
 rnd_init_maps<-function(){
-
+# Adapted from:
 ## Simulated categorical habitat/landscape pattern (simulated habitat distribution in the landscape)
 ## Implementation of the Modified Random Cluster (MRC) method of Saura and Martínez-Millán (2000) Landscape Ecology 15: 661-678. 
 
