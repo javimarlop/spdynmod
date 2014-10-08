@@ -58,9 +58,9 @@ A **mutiple resolution goodness of fit** assessment function `mrgf` was included
 
 ### References
 
-Costanza, R. (1989), 'Model goodness of fit: A multiple resolution procedure', Ecological Modelling  47(3--4), 199 - 215.
+Costanza, R. (1989), 'Model goodness of fit: A multiple resolution procedure', Ecological Modelling  47(3-4), 199 - 215.
 
-Kuhnert, M.; Voinov, A. & Seppelt, R. (2005), 'Comparing Raster Map Comparison Algorithms for Spatial Modeling and Analysis', Photogrammetric Engineering & Remote Sensing 71(8), 975--984.
+Kuhnert, M.; Voinov, A. & Seppelt, R. (2005), 'Comparing Raster Map Comparison Algorithms for Spatial Modeling and Analysis', Photogrammetric Engineering & Remote Sensing 71(8), 975-984.
 
 [Martínez-López J.](http://webs.um.es/javier.martinez/miwiki/lib/exe/fetch.php?id=inicio&cache=cache&media=isem2013_jml.pdf), Martínez-Fernández J. , Naimi B., Carreño M. F., Esteve M. A. (2013), Spatio-temporal dynamic modeling of plant communities responses to hydrological pressures in a semiarid Mediterranean wetland. Ecological Modelling for Ecosystem Sustainability in the context of Global Change - ISEM 19th. Toulouse, France.
 
