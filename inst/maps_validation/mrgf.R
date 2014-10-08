@@ -1,4 +1,7 @@
-mrgf<-function(a='',b='',w1,w2,year='',k=0){
+## Script by Javier Martinez-Lopez (UTF-8)
+## Creative Commons Attribution-ShareAlike 3.0 Unported License
+
+mrgf<-function(a='',b='',w1=1,w2=113,year='',k=0){
 require(raster)
 af<-raster(a)#paste(a,'.asc',sep=''))
 bf<-raster(b)#paste(b,'.asc',sep=''))
@@ -51,7 +54,7 @@ sfwes<-sum(fwes)
 sess<-sum(ees)
 ft<<-sfwes/sess
 png(paste('mrgf_',year,'.png',sep=''))
-plot(seq(w1,w2,2),fw,xlab='window size',ylab='Fw',ty='o',main='Multiple Resolution Goodness of Fit',sub=paste('Ft =',round(ft,2),'; k = ',k))
+plot(seq(w1,w2,2),fw,ylim=c(0,1),xlab='window size',ylab='Fw',ty='l',main='Multiple Resolution Goodness of Fit',sub=paste('Ft =',round(ft,2),'; k = ',k))
 mtext(year,side=3)
 dev.off()
 return(ft)
