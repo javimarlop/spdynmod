@@ -40,7 +40,7 @@ run_model()
 
 ## How to cite this model library
 
-Martínez-López, J.; Martínez-Fernández, J.; Naimi, B.; Carreño, M. F. & Esteve, M. A. (2014), 'An open-source spatio-dynamic wetland model of plant community responses to hydrological pressures ', Ecological Modelling (0),  http://dx.doi.org/10.1016/j.ecolmodel.2014.11.024
+Martínez-López, J.; Martínez-Fernández, J.; Naimi, B.; Carreño, M. F. & Esteve, M. A. (2015), 'An open-source spatio-dynamic wetland model of plant community responses to hydrological pressures ', Ecological Modelling 306, 326 -- 333,  http://dx.doi.org/10.1016/j.ecolmodel.2014.11.024
 
 ### Wetland and watershed maps
 
