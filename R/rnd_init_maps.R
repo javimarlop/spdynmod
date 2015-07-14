@@ -1,16 +1,16 @@
 rnd_init_maps<-function(){
 # Adapted from:
 ## Simulated categorical habitat/landscape pattern (simulated habitat distribution in the landscape)
-## Implementation of the Modified Random Cluster (MRC) method of Saura and Martínez-Millán (2000) Landscape Ecology 15: 661-678. 
+## Implementation of the Modified Random Cluster (MRC) method of Saura and Martinez-Millan (2000) Landscape Ecology 15: 661-678. 
 
-## The paper by Saura and Martínez-Millán (2000), the SIMMAP software where the MRC method was initially implemented
+## The paper by Saura and Martinez-Millan (2000), the SIMMAP software where the MRC method was initially implemented
 ## and the SIMMAP user manual are available at http://www2.montes.upm.es/personales/saura/software.html#simmap. 
 
 ## Read that paper (particularly the description of steps A-D there available) and the SIMMAP user manual for  
 ## better understanding this implementation and the impact of the simulation parameters on the resultant patterns.
 
 ## The author of this R implementation is Murray Efford (University of Auckland, New Zealand), 2012-04-09,10,11,12
-## Santiago Saura (Universidad Politécnica de Madrid, Spain) has made slight modifications (minor aspects only) 2012-06-06.
+## Santiago Saura (Universidad Politecnica de Madrid, Spain) has made slight modifications (minor aspects only) 2012-06-06.
 
 ## The original R implementation by Murray Efford is named "randomHabitat" and is part of 
 ## the "secr" package available at http://cran.r-project.org/web/packages/secr/index.html

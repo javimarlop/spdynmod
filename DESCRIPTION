@@ -1,6 +1,6 @@
 Package: spdynmod
 Type: Package
-Title: Spatio-dynamic wetland plant communities model
+Title: Spatio-Dynamic Wetland Plant Communities Model
 Description: A spatio-dynamic modelling package that focuses on three
     characteristic wetland plant communities in a semiarid Mediterranean
     wetland in response to hydrological pressures from the catchment. The
@@ -10,7 +10,7 @@ Description: A spatio-dynamic modelling package that focuses on three
     focus on offering easy to use tools for creating other spatio-dynamic
     models.
 Version: 1.1
-Date: 2015/07/14
+Date: 2015-07-14
 Author: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>, Babak Naimi
     <naimi.b@gmail.com>, Julia Martinez-Fernandez <juliamf@um.es>
 Maintainer: Javier Martinez-Lopez <javi.martinez.lopez@gmail.com>

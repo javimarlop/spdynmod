@@ -21,7 +21,7 @@ install.packages('spdynmod')
 
 ```
 library(devtools)
-install_github('spdynmod',username='javimarlop')
+install_github('javimarlop/spdynmod')
 ```
 
 ## Animation of model results
