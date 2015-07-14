@@ -12,7 +12,7 @@
 #' ## Not run animate_rb()
 
 animate_rb<-function(){
-
+require(raster)
 out<-get('out')
 nr<-get('nr')
 nc<-get('nc')

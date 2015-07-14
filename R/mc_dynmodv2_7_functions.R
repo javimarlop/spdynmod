@@ -1,4 +1,5 @@
-rpath = system.file("extdata",package="spdynmod")
+#rpath = system.file("extdata",package="spdynmod")
+rpath = paste(path.package('spdynmod'),'/extdata',sep='')
 #rpath = '/net/netapp2/H05_Homes/majavie/spdynmod/inst/extdata'
 
 input.Data <- c()

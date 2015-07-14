@@ -12,7 +12,7 @@
 #' ## Not run animate_bs()
 
 animate_bs<-function(){
-
+require(raster)
 out<-get('out')
 nr<-get('nr')
 nc<-get('nc')

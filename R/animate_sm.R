@@ -12,7 +12,7 @@
 #' ## Not run animate_sm()
 
 animate_sm<-function(){
-
+require(raster)
 out<-get('out')
 nr<-get('nr')
 nc<-get('nc')

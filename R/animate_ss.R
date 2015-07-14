@@ -12,7 +12,7 @@
 #' ## Not run animate_ss()
 
 animate_ss<-function(){
-
+require(raster)
 out<-get('out')
 nr<-get('nr')
 nc<-get('nc')
