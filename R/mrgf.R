@@ -28,22 +28,22 @@
 
 mrgf<-function(a='',b='',w1=1,w2=113,year='',k=0){
 require(raster)
-af<-raster(a)#paste(a,'.asc',sep=''))
-bf<-raster(b)#paste(b,'.asc',sep=''))
+af<-raster::raster(a)#paste(a,'.asc',sep=''))
+bf<-raster::raster(b)#paste(b,'.asc',sep=''))
 af@nrows->nr
 af@ncols->nc
 print(nr)
 print(nc)
-ft<<-NULL
+ft<-NULL
 fwes<-NULL
 ees<-NULL
-fw<<-NULL
+fw<-NULL
 #fitw<-NULL
 g<-0
 for(w in seq(w1,w2,2)){
 g<-g+1
-getValuesFocal(af,ngb=w)->valss1
-getValuesFocal(bf,ngb=w)->valss2
+raster::getValuesFocal(af,ngb=w)->valss1
+raster::getValuesFocal(bf,ngb=w)->valss2
 print(paste(w,dim(valss1)[2]))
 h<-0
 fits<-NULL
