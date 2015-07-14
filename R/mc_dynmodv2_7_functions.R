@@ -1,6 +1,6 @@
 #rpath = system.file("extdata",package="spdynmod")
-rpath = paste(path.package('spdynmod'),'/extdata',sep='')
-#rpath = '/net/netapp2/H05_Homes/majavie/spdynmod/inst/extdata'
+#require(spdynmod)
+rpath = paste(find.package('spdynmod'),'/extdata',sep='')
 
 input.Data <- c()
  temp <- read.csv(paste(rpath,'/mc_dynmodv2_7_Data_IPRH.csv',sep=''))

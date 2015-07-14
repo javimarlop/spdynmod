@@ -22,7 +22,7 @@
 ############# MODEL
 spdynmod<-function(t,init,parameters,nr,nc) { 
 
-rpath = paste(path.package('spdynmod'),'/extdata',sep='')
+rpath = paste(find.package('spdynmod'),'/extdata',sep='')
 
 nr<-get('nr')
 nc<-get('nc')

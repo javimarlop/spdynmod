@@ -21,7 +21,7 @@ run_model<-function(pgr_rb = 0.005, pgr_sm = 0.2, rnd = FALSE, method = 'euler',
 print(paste('random initial maps = ',rnd))
 
 #rpath = system.file("extdata",package="spdynmod")
-rpath = paste(path.package('spdynmod'),'/extdata',sep='')
+rpath = paste(find.package('spdynmod'),'/extdata',sep='')
 
 r<- raster::raster(paste(rpath,'/mc84_1_reclass.asc',sep=''))
 
