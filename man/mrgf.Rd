@@ -21,7 +21,7 @@ Fw vector of fits for each window size
 Ft weighted overall fit
 }
 \description{
-Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989.
+Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989. This function is computationally intensive.
 }
 \examples{
 ## Not run mrgf(year='1992',w1=1,w2=113,k=0)

@@ -1,6 +1,6 @@
 #' A function to perform Multiple Resolution Goodness of Fit.
 #' 
-#' Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989.
+#' Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989. This function is computationally intensive.
 #'
 #' @param year year validation year
 #'
@@ -30,6 +30,7 @@ af@nrows->nr
 af@ncols->nc
 print(nr)
 print(nc)
+
 ft<<-NULL
 fwes<-NULL
 ees<-NULL
@@ -74,6 +75,10 @@ ees[g]<-ee
 sfwes<-sum(fwes)
 sess<-sum(ees)
 ft<<-sfwes/sess
+
+ft<-get('ft')
+fw<-get('fw')
+
 #png(paste('mrgf_',year,'.png',sep=''))
 plot(seq(w1,w2,2),fw,ylim=c(0,1),xlab='window size',ylab='Fw',ty='l',main='Multiple Resolution Goodness of Fit',sub=paste('Ft =',round(ft,2),'; k = ',k))
 mtext(year,side=3)
