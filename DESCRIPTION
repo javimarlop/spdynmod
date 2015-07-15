@@ -22,8 +22,9 @@ LazyData: yes
 VignetteBuilder: knitr
 Imports:
     deSolve,
-    raster,
     animation
+Depends:
+    raster
 Suggests:
     knitr,
     roxygen2,

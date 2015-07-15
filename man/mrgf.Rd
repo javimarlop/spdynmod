@@ -4,18 +4,14 @@
 \alias{mrgf}
 \title{A function to perform Multiple Resolution Goodness of Fit.}
 \usage{
-mrgf(a = "", b = "", w1 = 1, w2 = 113, year = "", k = 0)
+mrgf(year = "1992", w1 = 1, w2 = 113, k = 0)
 }
 \arguments{
-\item{a}{a reference map}
-
-\item{b}{b simulated map}
+\item{year}{year validation year}
 
 \item{w1}{w1 initial window size}
 
 \item{w2}{w2 final window size}
-
-\item{year}{year validation year}
 
 \item{k}{k parameter for weighting Ft with lower/larger windows resolutions}
 }
@@ -28,8 +24,7 @@ Ft weighted overall fit
 Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989.
 }
 \examples{
-## Not run rpath = paste(find.package('spdynmod'),'/extdata',sep='')
-## Not run mrgf(a=paste(rpath,'/y1992_rs.asc',sep=''),b=paste(rpath,'/y1992_mod.asc',sep=''),w1=1,w2=113,year='1992',k=0)
+## Not run mrgf(year='1992',w1=1,w2=113,k=0)
 }
 \keyword{Fit}
 \keyword{Goodness}

@@ -2,15 +2,11 @@
 #' 
 #' Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989.
 #'
-#' @param a a reference map
-#'
-#' @param b b simulated map
+#' @param year year validation year
 #'
 #' @param w1 w1 initial window size
 #'
 #' @param w2 w2 final window size
-#'
-#' @param year year validation year
 #'
 #' @param k k parameter for weighting Ft with lower/larger windows resolutions
 #'
@@ -23,21 +19,21 @@
 #' @export
 #' 
 #' @examples
-#' ## Not run rpath = system.file("extdata",package="spdynmod")
-#' ## Not run mrgf(a=paste(rpath,'/y1992_rs.asc',sep=''),b=paste(rpath,'/y1992_mod.asc',sep=''),w1=1,w2=113,year='1992',k=0)
+#' ## Not run mrgf(year='1992',w1=1,w2=113,k=0)
 
-mrgf<-function(a='',b='',w1=1,w2=113,year='',k=0){
-require(raster)
-af<-raster::raster(a)#paste(a,'.asc',sep=''))
-bf<-raster::raster(b)#paste(b,'.asc',sep=''))
+mrgf<-function(year='1992',w1=1,w2=113,k=0){ # ,a='',b=''
+rpath = paste(find.package('spdynmod'),'/extdata',sep='')
+#require(raster)
+af<-raster::raster(paste(rpath,'/y',year,'_rs.asc',sep=''))
+bf<-raster::raster(paste(rpath,'/y',year,'_mod.asc',sep=''))
 af@nrows->nr
 af@ncols->nc
 print(nr)
 print(nc)
-ft<-NULL
+ft<<-NULL
 fwes<-NULL
 ees<-NULL
-fw<-NULL
+fw<<-NULL
 #fitw<-NULL
 g<-0
 for(w in seq(w1,w2,2)){
@@ -78,9 +74,9 @@ ees[g]<-ee
 sfwes<-sum(fwes)
 sess<-sum(ees)
 ft<<-sfwes/sess
-png(paste('mrgf_',year,'.png',sep=''))
+#png(paste('mrgf_',year,'.png',sep=''))
 plot(seq(w1,w2,2),fw,ylim=c(0,1),xlab='window size',ylab='Fw',ty='l',main='Multiple Resolution Goodness of Fit',sub=paste('Ft =',round(ft,2),'; k = ',k))
 mtext(year,side=3)
-dev.off()
+#dev.off()
 return(ft)
 }

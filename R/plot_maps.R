@@ -14,7 +14,7 @@
 #' ## Not run plot_maps()
 
 plot_maps<-function(year = 2008) { 
-require(raster)
+#require(raster)
 out<-get('out')
 nr<-get('nr')
 nc<-get('nc')
