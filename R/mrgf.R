@@ -80,7 +80,7 @@ ft<-get('ft')
 fw<-get('fw')
 
 #png(paste('mrgf_',year,'.png',sep=''))
-plot(seq(w1,w2,2),fw,ylim=c(0,1),xlab='window size',ylab='Fw',ty='l',main='Multiple Resolution Goodness of Fit',sub=paste('Ft =',round(ft,2),'; k = ',k))
+graphics::plot(seq(w1,w2,2),fw,ylim=c(0,1),xlab='window size',ylab='Fw',ty='l',main='Multiple Resolution Goodness of Fit',sub=paste('Ft =',round(ft,2),'; k = ',k))
 mtext(year,side=3)
 #dev.off()
 return(ft)
