@@ -10,4 +10,6 @@ README.md
 .RData
 .Rhistory
 maps_validation
+build_test.sh
+example_plotkml4ts.R
 
