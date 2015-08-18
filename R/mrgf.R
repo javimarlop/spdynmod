@@ -1,12 +1,12 @@
 #' A function to perform Multiple Resolution Goodness of Fit.
 #' 
-#' Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989. This function is computationally intensive.
+#' Returns the results of a Multiple Resolution Goodness of Fit after the modified method of Kuhnert et al. 2005, originally by Costanza 1989. This function is computationally intensive and consumes a lot of RAM memory.
 #'
-#' @param year year validation year
+#' @param year year validation year (by default 1992)
 #'
-#' @param w1 w1 initial window size
+#' @param w1 w1 initial window size (by default 1)
 #'
-#' @param w2 w2 final window size
+#' @param w2 w2 final window size (by default 27; max. 113)
 #'
 #' @param k k parameter for weighting Ft with lower/larger windows resolutions
 #'
@@ -21,7 +21,7 @@
 #' @examples
 #' ## Not run mrgf(year='1992',w1=1,w2=113,k=0)
 
-mrgf<-function(year='1992',w1=1,w2=113,k=0){ # ,a='',b=''
+mrgf<-function(year='1992',w1=1,w2=27,k=0){ # ,a='',b=''
 rpath = paste(find.package('spdynmod'),'/extdata',sep='')
 #require(raster)
 af<-raster::raster(paste(rpath,'/y',year,'_rs.asc',sep=''))

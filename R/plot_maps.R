@@ -32,13 +32,13 @@ nb <- length(brks)-1
 
 par(mfrow=c(2,2))
 
-plot(raster::raster(matrix(nrow = nr, ncol = nc, out[i, 2:(NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Salt marsh")
+image(raster(matrix(nrow = nr, ncol = nc, out[i, 2:(NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Salt marsh")
 
-plot(raster::raster(matrix(nrow = nr, ncol = nc, out[i, (NN+2):(2*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Salt steppe")
+image(raster(matrix(nrow = nr, ncol = nc, out[i, (NN+2):(2*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Salt steppe")
 
-plot(raster::raster(matrix(nrow = nr, ncol = nc, out[i, (2*NN+2):(3*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Reed beds")
+image(raster(matrix(nrow = nr, ncol = nc, out[i, (2*NN+2):(3*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Reed beds")
 
 
-plot(raster::raster(matrix(nrow = nr, ncol = nc, out[i, (3*NN+2):(4*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Bare soil")
+image(raster(matrix(nrow = nr, ncol = nc, out[i, (3*NN+2):(4*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Bare soil")
 }
 
