@@ -14,7 +14,7 @@
 #' ## Not run plot_maps()
 
 plot_maps<-function(year = 2008) { 
-#require(raster)
+
 out<-get('out')
 nr<-get('nr')
 nc<-get('nc')
@@ -24,21 +24,26 @@ i <- (year-1984)*4
 
 if(i==0){i = 1}
 
+out[out<0]<-0
+
 print(paste('year = ',year))
 
-brks <- seq(0, 30, by=1) 
-nb <- length(brks)-1 
-#i<-96
+a0<-raster(matrix(nrow = nr, ncol = nc, out[i, 2:(NN+1)]))
 
-par(mfrow=c(2,2))
+b0<-raster(matrix(nrow = nr, ncol = nc, out[i, (NN+2):(2*NN+1)]))
 
-image(raster(matrix(nrow = nr, ncol = nc, out[i, 2:(NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Salt marsh")
+c0<-raster(matrix(nrow = nr, ncol = nc, out[i, (2*NN+2):(3*NN+1)]))
 
-image(raster(matrix(nrow = nr, ncol = nc, out[i, (NN+2):(2*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Salt steppe")
+d0<-raster(matrix(nrow = nr, ncol = nc, out[i, (3*NN+2):(4*NN+1)]))
 
-image(raster(matrix(nrow = nr, ncol = nc, out[i, (2*NN+2):(3*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Reed beds")
-
-
-image(raster(matrix(nrow = nr, ncol = nc, out[i, (3*NN+2):(4*NN+1)])),breaks=brks, col=rev(grDevices::terrain.colors(nb)), lab.breaks=brks, zlim=c(0,30),main="Bare soil")
+volc <- c("#FFFFD4", "#FED98E", "#FE9929", "#D95F0E", "#993404")
+#own<-c("white","orange","red")
+#own2<-c('#ffeda0','#feb24c','#f03b20')
+own2<-c('#fed976','#feb24c','#addd8e','#78c679','#41ab5d','#238443','#006837','#004529')# '#d9f0a3'
+map0<-stack(a0,b0,c0,d0)
+names(map0)<-c('Salt steppe','Salt marsh','Reed beds','Bare soil')
+#map<-spplot(map0,col.regions = terrain.colors(25))
+map<-spplot(map0,col.regions = colorRampPalette(own2)(25))
+map
 }
 

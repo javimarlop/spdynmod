@@ -1,5 +1,8 @@
+spdynmod 1.1.2
+
+* New map style
+
 spdynmod 1.1.1
------------------
 
 * plot and Windows compatibility bugs fixed
 * Multiple Resolution Goodness of Fit (mrgf) function added

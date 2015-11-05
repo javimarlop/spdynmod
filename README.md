@@ -11,10 +11,13 @@ Development version of the R library Spdynmod: Spatio-dynamic wetland plant comm
 
 The stable version can be found on [CRAN](http://cran.r-project.org/web/packages/spdynmod/index.html)
 
+An online version with a Graphical User Interface can be found at the following [link](http://95.85.28.225/ocpu/library/spdynmodocpu/www/). 
+
 ## How to install the spdynmod R library
 
 ```
 install.packages('spdynmod')
+devtools::install_github('javimarlop/spdynmodocpu') # Graphical User Interface version
 ```
 
 ## How to install the development version of the library
