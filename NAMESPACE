@@ -2,7 +2,7 @@
 
 import(raster)
 importFrom(sp,spplot)
-importFrom(grDevices,terrain.colors,topo.colors)
+importFrom(grDevices,terrain.colors,topo.colors,colorRampPalette)
 importFrom(graphics,par,mtext,axis,plot)
 importFrom(stats,lm,time,rexp,rlnorm,rnorm,rpois,runif)
 export(animate_bs)
