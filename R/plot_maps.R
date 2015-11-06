@@ -25,6 +25,7 @@ i <- (year-1984)*4
 if(i==0){i = 1}
 
 out[out<0]<-0
+out[out>25]<-25
 
 print(paste('year = ',year))
 
@@ -41,9 +42,9 @@ volc <- c("#FFFFD4", "#FED98E", "#FE9929", "#D95F0E", "#993404")
 #own2<-c('#ffeda0','#feb24c','#f03b20')
 own2<-c('#fed976','#feb24c','#addd8e','#78c679','#41ab5d','#238443','#006837','#004529')# '#d9f0a3'
 map0<-stack(a0,b0,c0,d0)
-names(map0)<-c('Salt steppe','Salt marsh','Reed beds','Bare soil')
+names(map0)<-c('Salt marsh','Salt steppe','Reed beds','Bare soil')
 #map<-spplot(map0,col.regions = terrain.colors(25))
-map<-spplot(map0,col.regions = colorRampPalette(own2)(25))
+map<-spplot(map0,zlim=c(0,25),col.regions = colorRampPalette(own2)(25))
 map
 }
 

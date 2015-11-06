@@ -21,7 +21,7 @@ NN<-get('NN')
 #brks <- seq(0, 30, by=1) 
 #nb <- length(brks)-1 
 out[out<0]<-0
-
+out[out>25]<-25
 #require(animation)
 
 animation::saveGIF({
@@ -36,16 +36,17 @@ for (i in seq(1, dim(out)[1], by = 1)){
 
 own2<-c('#fed976','#feb24c','#addd8e','#78c679','#41ab5d','#238443','#006837','#004529')# '#d9f0a3'
 map0<-stack(a,b,c,d)
-names(map0)<-c('Salt steppe','Salt marsh','Reed beds','Bare soil')
+names(map0)<-c('Bare soil','Salt steppe','Salt marsh','Reed beds')
 #map<-spplot(map0,col.regions = terrain.colors(25))
-map<-spplot(map0,col.regions = colorRampPalette(own2)(25))
+map<-spplot(map0,zlim=c(0,25),col.regions = colorRampPalette(own2)(25))
+#map2<-map+layer(barplot(i2[i],col="black",horiz=T,xlim=c(1984,2008),axes=F,cex.sub=1.4, main="Time",cex.main=1.5))
 print(map)
 
  #par(mar=c(13,1,3,1.5))
  #print(barplot(i2[i],col="black",horiz=T,xlim=c(1984,2008),axes=F,cex.sub=1.4, main="Time",cex.main=1.5))
  #par(las=2)
  #axis(1,at=c(1984,1992,1995,1997,2001,2008))
- }},movie.name='movie.gif')
+ }},movie.name='movie2.gif')
 
 }
 
