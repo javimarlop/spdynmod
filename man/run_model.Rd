@@ -12,7 +12,7 @@ run_model(pgr_rb = 0.005, pgr_sm = 0.2, rnd = FALSE, method = "euler",
 
 \item{pgr_sm}{potential growth rate of salt marsh}
 
-\item{rnd}{create random initial state variables map. It is calculated based on a script adapted from Murray Efford (University of Auckland, New Zealand) and Santiago Saura (Universidad Politecnica de Madrid, Spain).}
+\item{rnd}{create random initial state variables map. It is calculated based on a script adapted from Murray Efford (University of Auckland, New Zealand) and Santiago Saura (Universidad Politecnica de Madrid, Spain). This option requires that the igraph package is available.}
 
 \item{method}{integration method: "lsodes", "euler", "rk4", "ode23", "ode45", "adams", "iteration"}
 
