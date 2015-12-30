@@ -84,7 +84,7 @@ nc<-get('nc')
 NN<-get('NN')
 
 ### state variables ###
-st <- c(raster::as.vector(raster::as.matrix(sm_init)), raster::as.vector(raster::as.matrix(es_init)),raster::as.vector(raster::as.matrix(rb_init)),raster::as.vector(raster::as.matrix(baresoil_init)))
+st <- c(as.vector(raster::as.matrix(sm_init)), as.vector(raster::as.matrix(es_init)),as.vector(raster::as.matrix(rb_init)),as.vector(raster::as.matrix(baresoil_init)))
 
 ### parameters ###
 parms <- c(tprb = pgr_rb, tpsm = pgr_sm)# tpsm = 0.01
